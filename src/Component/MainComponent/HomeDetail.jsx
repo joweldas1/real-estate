@@ -7,14 +7,14 @@ const HomeDetail = () => {
     const{area , description , estate_title , facilities  , image , location , price , segment_name , status    }  = home
 
     return (
-        <div className='grid grid-cols-5'>
-            <div className='col-span-4 '>
+        <div className='grid  m-auto md:grid-cols-5'>
+            <div className='col-span-4  '>
                 <img src={image} className='w-full' alt="" />
-                <h1 className="text-5xl font-semibold my-3 ">{estate_title }</h1>
-                <p className='text-xl font-normal '>{description}</p>
+                <h1 className="text-5xl font-semibold my-3 mx-2">{estate_title }</h1>
+                <p className='text-xl font-normal mx-2 '>{description}</p>
                 <div className="card card-compact w-96 bg-base-100 shadow-xl mt-5">
 
-                <div className="card-body ">
+                <div className="card-body m">
                  <h1 className='font-bold text-xl'>Details :</h1>
                  <hr/>
                  <h className="text-lg "> <span className='font-semibold'>Name:</span> {estate_title } </h>

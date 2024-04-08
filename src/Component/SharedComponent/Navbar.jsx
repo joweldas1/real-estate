@@ -1,7 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './navbar.css'
+import useAuth from "../../Pages/useAuth/useAuth";
 
 const Navbar = () => {
+  const {user ,logOutUser}=useAuth();
     const navItem= 
     <>
     <li> <NavLink to="/" > Home </NavLink> </li>
@@ -9,6 +11,9 @@ const Navbar = () => {
     <li> <NavLink to="/AboutUs" > About Us </NavLink> </li>
     <li> <NavLink to="/profile" > Profile </NavLink> </li>
     </>
+     const sinOutUser=()=>{
+      return logOutUser
+  }
     return (
         <div>
 
@@ -36,7 +41,11 @@ const Navbar = () => {
           <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
         </div>
       </div>
-    <a className="btn">Login</a>
+      {
+        user? <button onClick={logOutUser} className="btn">  <Link to="/login">Logout</Link></button>:
+        <button className="btn">  <Link to='/login'>Login</Link> </button>
+      }
+     
   </div>
 </div>
 

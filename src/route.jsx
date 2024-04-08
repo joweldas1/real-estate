@@ -5,6 +5,8 @@ import Home from "./Pages/Home/Home";
 import Blog from "./Pages/Blog/Blog";
 import Profile from "./Pages/Profile/Profile";
 import HomeDetail from "./Component/MainComponent/HomeDetail";
+import Login from "./Pages/Login/Login";
+import Registration from "./Pages/Registration/Registration";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
                 path:'/home/:id',
                 loader:()=>fetch('houses.json'),
                 element:<HomeDetail/>
+            },
+            {
+                path:'/login',
+                element:<Login/>
+            },
+            {
+                path:'/registration',
+                element:<Registration/>
             }
         ]
     }
