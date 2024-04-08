@@ -4,6 +4,7 @@ import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 import Home from "./Pages/Home/Home";
 import Blog from "./Pages/Blog/Blog";
 import Profile from "./Pages/Profile/Profile";
+import HomeDetail from "./Component/MainComponent/HomeDetail";
 
 const router = createBrowserRouter([
     {
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home/>,
+              
             },
             {
                 path:'/blog',
@@ -22,6 +24,11 @@ const router = createBrowserRouter([
             {
                 path:'/profile',
                 element:<Profile/>,
+            },
+            {
+                path:'/home/:id',
+                loader:()=>fetch('houses.json'),
+                element:<HomeDetail/>
             }
         ]
     }

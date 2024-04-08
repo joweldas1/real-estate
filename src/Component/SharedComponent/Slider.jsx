@@ -26,7 +26,7 @@ const HeroSlider = () => {
         >
          {
                 slide.map((slide,idx)=>  <SwiperSlide  key={idx}>
-                    <div style={{background:` linear-gradient(to right, rgba(1, 1, 9, 0.8) 10%, rgba(24, 2, 2, 0.6) 20%) , url(${slide.image})`, height:`calc(100vh - 70px)`}} className=' w-full bg-no-repeat'>
+                    <div style={{background:` linear-gradient(to right, rgba(1, 1, 9, 0.8) 10%, rgba(24, 2, 2, 0.6) 20%) , url(${slide.image})`, height:`calc(100vh - 70px)`}} className=' w-full bg-no-repeat bg-contain bg-center'>
 
                         <div className='flex flex-col items-center justify-center h-full'>
                             <h1 className='text-7xl font-semibold text-white'>{slide.title}</h1>
