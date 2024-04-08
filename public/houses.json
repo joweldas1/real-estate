@@ -1,0 +1,75 @@
+[
+    {
+      "estate_title": "Cozy Family Home",
+      "id": 1,
+      "segment_name": "Residential",
+      "description": "A charming single-family home perfect for families. Features a spacious living area, kitchen, and backyard.",
+      "price": "$2000/month",
+      "status": "rent",
+      "area": "2000 sq ft",
+      "location": "Suburban neighborhood",
+      "facilities": ["Living room", "Kitchen", "Backyard"],
+      "image": "https://i.ibb.co/MD20ydv/2148972401.jpg"
+    },
+    {
+      "estate_title": "Modern Apartment",
+      "id": 2,
+      "segment_name": "Residential",
+      "description": "Stylish apartment with contemporary design. Includes amenities such as a swimming pool and gym.",
+      "price": "$1500/month",
+      "status": "rent",
+      "area": "1200 sq ft",
+      "location": "Downtown area",
+      "facilities": ["Living room", "Kitchen", "Swimming pool", "Gym"],
+      "image": "https://i.ibb.co/3FQgB11/image.jpg"
+    },
+    {
+      "estate_title": "Spacious Townhouse",
+      "id": 3,
+      "segment_name": "Residential",
+      "description": "Large townhouse perfect for families or roommates. Includes multiple bedrooms and a backyard.",
+      "price": "$2500/month",
+      "status": "rent",
+      "area": "2200 sq ft",
+      "location": "Suburban neighborhood",
+      "facilities": ["Living room", "Kitchen", "Bedrooms", "Backyard"],
+      "image": "https://i.ibb.co/fQ2nw8y/2050.jpg"
+    },
+    {
+      "estate_title": "Luxury Villa",
+      "id": 4,
+      "segment_name": "Luxury",
+      "description": "Exquisite villa with breathtaking ocean views. Features spacious rooms, private pool, and lush gardens.",
+      "price": "$5000/month",
+      "status": "rent",
+      "area": "5000 sq ft",
+      "location": "Coastal area",
+      "facilities": ["Living room", "Kitchen", "Bedrooms", "Swimming pool", "Gardens"],
+      "image": "https://i.ibb.co/1qxFprm/8074.jpg"
+    },
+    {
+      "estate_title": "Urban Loft",
+      "id": 5,
+      "segment_name": "Specialty",
+      "description": "Chic loft in the heart of the city. Ideal for professionals seeking a trendy urban lifestyle.",
+      "price": "$1800/month",
+      "status": "rent",
+      "area": "1000 sq ft",
+      "location": "City center",
+      "facilities": ["Living room", "Kitchen", "Workspace"],
+      "image": "https://i.ibb.co/yB22LCQ/23773.jpg"
+    },
+    {
+      "estate_title": "Rustic Cottage",
+      "id": 6,
+      "segment_name": "Vacation Rental",
+      "description": "Quaint cottage nestled in the countryside. Perfect for a peaceful getaway amidst nature.",
+      "price": "$1200/week",
+      "status": "rent",
+      "area": "800 sq ft",
+      "location": "Rural area",
+      "facilities": ["Living room", "Kitchen", "Fireplace"],
+      "image": "https://i.ibb.co/1zfqMJ8/150749.jpg"
+    }
+  ]
+  
