@@ -7,6 +7,7 @@ import Profile from "./Pages/Profile/Profile";
 import HomeDetail from "./Component/MainComponent/HomeDetail";
 import Login from "./Pages/Login/Login";
 import Registration from "./Pages/Registration/Registration";
+import ProtectRoute from "./Pages/ProtectRoute/ProtectRoute";
 
 const router = createBrowserRouter([
     {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
             {
                 path:'/home/:id',
                 loader:()=>fetch('houses.json'),
-                element:<HomeDetail/>
+                element:<ProtectRoute><HomeDetail/></ProtectRoute>
             },
             {
                 path:'/login',

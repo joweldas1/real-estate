@@ -4,6 +4,8 @@ import useAuth from "../../Pages/useAuth/useAuth";
 
 const Navbar = () => {
   const {user ,logOutUser}=useAuth();
+  console.log(user);
+  
     const navItem= 
     <>
     <li> <NavLink to="/" > Home </NavLink> </li>
@@ -11,9 +13,7 @@ const Navbar = () => {
     <li> <NavLink to="/AboutUs" > About Us </NavLink> </li>
     <li> <NavLink to="/profile" > Profile </NavLink> </li>
     </>
-     const sinOutUser=()=>{
-      return logOutUser
-  }
+   
     return (
         <div>
 
@@ -42,7 +42,7 @@ const Navbar = () => {
         </div>
       </div>
       {
-        user? <button onClick={logOutUser} className="btn">  <Link to="/login">Logout</Link></button>:
+        user? <><button onClick={logOutUser} className="btn">  <Link to="/login">Logout</Link></button> </>:
         <button className="btn">  <Link to='/login'>Login</Link> </button>
       }
      

@@ -1,9 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link ,useLocation ,useNavigate} from "react-router-dom";
 import useAuth from "../useAuth/useAuth";
 import SocialLogin from "../../Component/SharedComponent/SocialLogin";
 
+
 const Login = () => {
-    const{logUser }=useAuth()
+    const{logUser,setLoading }=useAuth()
+    const location=useLocation()
+    const navigate=useNavigate()
+    console.log(location);
     const handleToLogin=(e)=>{
         e.preventDefault()
         const login=new FormData(e.currentTarget);
@@ -11,7 +15,13 @@ const Login = () => {
         const password=login.get('password');
         logUser(email,password)
         .then((result) => {
+          if(result.user){
+            setLoading(true)
+
+            navigate(location?.state||'/')
+          }
             console.log(result.user);
+          
         }).catch((err) => {
             console.log(err.message);
         });
@@ -46,7 +56,7 @@ const Login = () => {
       <div className="text-center">
         <p className="">Don't have account? Please <Link to='/registration' className="text-blue-800 font-semibold">Registration</Link> </p>
       </div>
-           <SocialLogin/>
+        <SocialLogin/>
             </div>
              
 
