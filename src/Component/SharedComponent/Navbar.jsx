@@ -3,9 +3,9 @@ import './navbar.css'
 import useAuth from "../../Pages/useAuth/useAuth";
 
 const Navbar = () => {
-  const {user ,logOutUser}=useAuth();
+    const {user ,logOutUser,  }=useAuth();
   console.log(user);
-  
+
     const navItem= 
     <>
     <li> <NavLink to="/" > Home </NavLink> </li>
@@ -17,7 +17,7 @@ const Navbar = () => {
     return (
         <div>
 
-<div className="navbar bg-gray-400">
+<div className="navbar bg-gray-400 ">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -36,11 +36,15 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-  <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-        </div>
-      </div>
+ 
+ 
+  <div className="tooltip tooltip-left" data-tip={user?.displayName}>
+{
+  user?<img className="rounded-full w-10 mr-2 "  src={user.photoURL}/> :<img alt="Tailwind CSS Navbar component"  className="rounded-full w-10 mr-2 "src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+}  
+</div>
+
+ 
       {
         user? <><button onClick={logOutUser} className="btn">  <Link to="/login">Logout</Link></button> </>:
         <button className="btn">  <Link to='/login'>Login</Link> </button>

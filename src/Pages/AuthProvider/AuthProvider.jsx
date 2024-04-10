@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut ,updateProfile } from "firebase/auth";
 import auth from "../Firbase/firebase.config";
 
 export const AuthData=createContext(null)
@@ -7,6 +7,7 @@ export const AuthData=createContext(null)
 const AuthProvider = ({children}) => {
     const [loading,setLoading]=useState(true)
     const [user,setUser]=useState(null);
+    
     const googleProvider=new GoogleAuthProvider;
     const gitProvider = new GithubAuthProvider;
 
@@ -17,6 +18,15 @@ const AuthProvider = ({children}) => {
         return createUserWithEmailAndPassword(auth,email,password)
     }
 
+    const updateUserProfile=(name,image)=>{
+         return updateProfile(auth.currentUser, {
+            displayName:name,
+            photoURL :image
+         
+          });
+          
+    }
+
 
     const logUser=(email,password)=>{
         setLoading(true)
@@ -25,20 +35,16 @@ const AuthProvider = ({children}) => {
 
 
     useEffect(()=>{
-        const unSubscribe = onAuthStateChanged(auth,currentUser=>{
-            setLoading(false)
-            setUser(currentUser)
-           
-
+        const subs= onAuthStateChanged(auth,currentUser=>{
+           setLoading(false)
+            return setUser(currentUser)
         })
-        return ()=>{unSubscribe()}
-
+        return ()=>{subs()}
     },[])
 
 
     const logOutUser=()=>{
-        setLoading(false)
-
+        setLoading(true)
         return signOut(auth)
     }
     const googleLogin=()=>{
@@ -50,9 +56,8 @@ const AuthProvider = ({children}) => {
 
 
 
-console.log(user);
 
-    const authShare={createUser , logUser ,user ,logOutUser ,googleLogin , gitLogin ,loading,setLoading}
+    const authShare={createUser , logUser ,user ,logOutUser ,googleLogin , gitLogin ,loading,setLoading ,updateUserProfile}
     return (
      <AuthData.Provider value={authShare}>
         {children}

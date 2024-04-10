@@ -32,6 +32,9 @@ const HeroSlider = () => {
                             <h1 className='text-7xl font-semibold text-white'>{slide.title}</h1>
                             <p className='text-xl lg:w-1/2 text-center my-6 text-white'>{slide.description}</p>
                             <button className='btn btn-info'>Contact</button>
+                            
+
+                               
                         </div>
 
                     </div>
