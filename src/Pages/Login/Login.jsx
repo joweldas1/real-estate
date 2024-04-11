@@ -8,6 +8,8 @@ const Login = () => {
     const location=useLocation()
     const navigate=useNavigate()
     console.log(location);
+
+    
     const handleToLogin=(e)=>{
         e.preventDefault()
         const login=new FormData(e.currentTarget);
@@ -17,7 +19,6 @@ const Login = () => {
         .then((result) => {
           if(result.user){
             setLoading(true)
-
             navigate(location?.state||'/')
           }
             console.log(result.user);

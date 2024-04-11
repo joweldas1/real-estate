@@ -8,8 +8,8 @@ const AuthProvider = ({children}) => {
     const [loading,setLoading]=useState(true)
     const [user,setUser]=useState(null);
     
-    const googleProvider=new GoogleAuthProvider;
-    const gitProvider = new GithubAuthProvider;
+    const googleProvider=new GoogleAuthProvider();
+    const gitProvider = new GithubAuthProvider();
 
     
 
