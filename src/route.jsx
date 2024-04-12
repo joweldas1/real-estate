@@ -8,6 +8,7 @@ import HomeDetail from "./Component/MainComponent/HomeDetail";
 import Login from "./Pages/Login/Login";
 import Registration from "./Pages/Registration/Registration";
 import ProtectRoute from "./Pages/ProtectRoute/ProtectRoute";
+import Update from "./Component/SharedComponent/Update";
 
 const router = createBrowserRouter([
     {
@@ -35,11 +36,16 @@ const router = createBrowserRouter([
             },
             {
                 path:'/login',
-                element:<Login/>
+                element:<Login/>,
+              
             },
             {
                 path:'/registration',
                 element:<Registration/>
+            },
+            {
+                path:'/update',
+                element:<Update/>
             }
         ]
     }

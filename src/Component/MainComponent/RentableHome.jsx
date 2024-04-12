@@ -14,7 +14,6 @@ useEffect(() => {
       .then(data => setHomes(data))
       .catch(error => console.error('Error fetching data:', error));
   }, []);
-console.log(homes);
 
 
  

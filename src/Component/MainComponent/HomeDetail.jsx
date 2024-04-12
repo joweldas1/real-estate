@@ -4,7 +4,7 @@ const HomeDetail = () => {
     const homeId=parseInt(id)
     const houses=useLoaderData()
     console.log(typeof houses);   
-     const home=houses[homeId]
+     const home=houses[homeId];
      console.log(home);
     
 
@@ -25,7 +25,7 @@ const HomeDetail = () => {
                  <h2 className='text-lg'> <span className='font-bold'>Area  :</span> {home && home.area}</h2>
                  <h2 className='text-lg'> <span className='font-bold'>Area Type  :</span> {home.segment_name}</h2>
                  <h2 className='text-lg font-semibold'>Facilities</h2>
-                { facilities.map((f ,idx)=>       <h2 key={idx} className='text-base'> <span className='font-bold'>- </span> {f}</h2>  )}
+                { home.facilities.map((f ,idx)=>       <h2 key={idx} className='text-base'> <span className='font-bold'>- </span> {f}</h2>  )}
                 <h2 className='text-lg'> <span className='font-bold'>Rent Price :</span> {home.price}</h2>
                 </div>
                 </div>

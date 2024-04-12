@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut ,updateProfile } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut ,updateProfile } from "firebase/auth";
 import auth from "../Firbase/firebase.config";
 
 export const AuthData=createContext(null)
@@ -17,7 +17,6 @@ const AuthProvider = ({children}) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth,email,password)
     }
-
     const updateUserProfile=(name,image)=>{
          return updateProfile(auth.currentUser, {
             displayName:name,
@@ -26,14 +25,10 @@ const AuthProvider = ({children}) => {
           });
           
     }
-
-
     const logUser=(email,password)=>{
         setLoading(true)
         return signInWithEmailAndPassword(auth,email,password)
     }
-
-
     useEffect(()=>{
         const subs= onAuthStateChanged(auth,currentUser=>{
            setLoading(false)
@@ -41,11 +36,12 @@ const AuthProvider = ({children}) => {
         })
         return ()=>{subs()}
     },[])
-
-
     const logOutUser=()=>{
         setLoading(true)
         return signOut(auth)
+    }
+    const resetPassword=(email)=>{
+        return sendPasswordResetEmail(auth,email)
     }
     const googleLogin=()=>{
         return signInWithPopup(auth,googleProvider)
@@ -53,11 +49,17 @@ const AuthProvider = ({children}) => {
     const gitLogin=()=>{
         return signInWithPopup(auth,gitProvider)
     }
+    const userUpdate=(name,image)=>{
+        return updateProfile(auth.currentUser,{
+            displayName:name,
+            photoURL:image
+        })
+    }
 
 
+console.log(user);
 
-
-    const authShare={createUser , logUser ,user ,logOutUser ,googleLogin , gitLogin ,loading,setLoading ,updateUserProfile}
+    const authShare={createUser , logUser ,user ,logOutUser ,googleLogin , gitLogin ,loading,setLoading ,updateUserProfile ,resetPassword,userUpdate} 
     return (
      <AuthData.Provider value={authShare}>
         {children}

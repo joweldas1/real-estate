@@ -4,14 +4,17 @@ import useAuth from "../../Pages/useAuth/useAuth";
 
 const Navbar = () => {
     const {user ,logOutUser,  }=useAuth();
-  console.log(user);
+    console.log(user);
 
     const navItem= 
     <>
     <li> <NavLink to="/" > Home </NavLink> </li>
     <li> <NavLink to="/blog" > Blog </NavLink> </li>
     <li> <NavLink to="/AboutUs" > About Us </NavLink> </li>
-    <li> <NavLink to="/profile" > Profile </NavLink> </li>
+    {
+      user?  <li> <NavLink to="/profile" > Profile </NavLink> </li>:" "
+
+    }
     </>
    
     return (

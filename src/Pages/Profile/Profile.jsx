@@ -1,13 +1,15 @@
-import React from 'react';
+import { Link, Navigate } from 'react-router-dom';
 import useAuth from '../useAuth/useAuth';
 
 const Profile = () => {
     const {user}=useAuth()
+
     const{displayName,email,emailVerified,photoURL}=user
-    console.log(displayName,email,emailVerified,photoURL);
+	console.log(user);
+    console.log(displayName,email,emailVerified,photoURL );
     return (
-        <div>
-            <div className="flex flex-col justify-center h-[80vh]  items-center p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
+        <div className='flex flex-col items-center justify-center h-[80vh]'>
+            <div className="flex flex-col justify-center border border-blue-800  mx-auto  items-center p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
                 {
                     photoURL? <img className='w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square' src={photoURL}/>:<img src="https://source.unsplash.com/150x150/?portrait?3" alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
                 }
@@ -20,13 +22,13 @@ const Profile = () => {
 
 
             }
-			<p className="px-5 text-xs sm:text-base dark:text-gray-600">Full-stack developer</p>
+			{
+				emailVerified===true?<h2 className="text-lg font-semibold ">Verified email: Yes</h2>:
+                <h2 className="text-lg font-semibold ">Verified email:No</h2>
+			}
 		</div>
 
 
-
-
-	
 	
 		<div className="flex justify-center pt-2 space-x-4 align-center">
 			<a rel="noopener noreferrer" href="#" aria-label="GitHub" className="p-2 rounded-md dark:text-gray-800 hover:dark:text-violet-600">
@@ -51,6 +53,8 @@ const Profile = () => {
 			</a>
 		</div>
 	</div>
+	<Link to="/update" className='my-2'>	<button className='py-1 px-3 text-sm rounded-lg bg-green-800 text-white border-t-black hover:bg-blue-500'>Update Your Profile</button></Link>
+
 </div>
         </div>
     );

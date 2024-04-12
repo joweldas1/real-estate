@@ -1,15 +1,15 @@
 import { Link ,useLocation ,useNavigate} from "react-router-dom";
 import useAuth from "../useAuth/useAuth";
 import SocialLogin from "../../Component/SharedComponent/SocialLogin";
+import PasswordReset from "../../Component/SharedComponent/PasswordReset";
 
 
 const Login = () => {
     const{logUser,setLoading }=useAuth()
     const location=useLocation()
     const navigate=useNavigate()
-    console.log(location);
 
-    
+
     const handleToLogin=(e)=>{
         e.preventDefault()
         const login=new FormData(e.currentTarget);
@@ -46,14 +46,14 @@ const Login = () => {
             <span className="label-text">Password</span>
           </label>
           <input type="password" placeholder="password" name="password" className="input input-bordered" required autoComplete="off"/>
-          <label className="label">
-            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-          </label>
         </div>
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
         </div>
       </form>
+      
+      <PasswordReset />
+
       <div className="text-center">
         <p className="">Don't have account? Please <Link to='/registration' className="text-blue-800 font-semibold">Registration</Link> </p>
       </div>
