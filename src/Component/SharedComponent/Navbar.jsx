@@ -31,7 +31,11 @@ const Navbar = () => {
       {navItem}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl"> Helper </a>
+    <div className="flex items-center justify-start relative">
+    
+    <a className="   text-2xl font-semibold  "> Helper </a>
+
+    </div>
   </div>
   <div className="navbar-center hidden lg:flex ">
     <ul className=" menu-horizontal px-1 nav">
@@ -49,8 +53,8 @@ const Navbar = () => {
 
  
       {
-        user? <><button onClick={logOutUser} className="btn">  <Link to="/login">Logout</Link></button> </>:
-        <button className="btn">  <Link to='/login'>Login</Link> </button>
+        user? <><button onClick={logOutUser} className="py-2 bg-slate-200 px-2 rounded-md text-sm hover:bg-black hover:text-white">  <Link to="/login">Logout</Link></button> </>:
+        <button className="py-2 bg-slate-200 px-2 rounded-md text-sm hover:bg-black hover:text-white">  <Link to='/login'>Login</Link> </button>
       }
      
   </div>

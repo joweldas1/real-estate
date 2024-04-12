@@ -1,4 +1,6 @@
+import Contact from "../../Component/MainComponent/Contact";
 import RentableHome from "../../Component/MainComponent/RentableHome";
+import Footer from "../../Component/SharedComponent/Footer";
 import HeroSlider from "../../Component/SharedComponent/Slider";
 
 
@@ -10,6 +12,8 @@ const Home = () => {
     <div>
       <HeroSlider />
       <RentableHome />
+      <Contact/>
+      <Footer/>
     </div>
   );
 };

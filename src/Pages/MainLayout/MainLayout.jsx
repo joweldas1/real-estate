@@ -1,3 +1,4 @@
+import Footer from '../../Component/SharedComponent/Footer';
 import Navbar from '../../Component/SharedComponent/Navbar';
 import {Outlet} from 'react-router-dom'
 const MainLayout = () => {

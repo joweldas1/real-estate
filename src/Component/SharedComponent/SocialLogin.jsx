@@ -1,4 +1,8 @@
   import useAuth from "../../Pages/useAuth/useAuth";
+  import { FaGoogle } from "react-icons/fa";
+  import { FaGithub } from "react-icons/fa";
+
+
   import { useLocation, useNavigate } from "react-router-dom";
   const SocialLogin = () => {
     const { googleLogin, gitLogin } = useAuth();
@@ -17,18 +21,24 @@
     };
 
     return (
-      <div>
+      <div className="flex flex-col mt-4 md:w-1/2 mx-auto gap-3">
         <button
-          className="btn bg-blue-600 text-white"
+          className="btn bg-[#3D8AFF  ] mx-7 border border-black"
           onClick={() => social(googleLogin)}
         >
-          Continue with google
+                    <span><FaGoogle className="text-[#4285F4]"/> </span>
+                    <span className="text-[#000000]"> Continue with google</span>
+
+         
         </button>
         <button
-          className="btn bg-blue-600 text-white"
+          className="btn  bg-[#3D8AFF  ] mx-7 border border-black"
           onClick={() => social(gitLogin)}
         >
-          Continue with github
+          <span><FaGithub className="text-[#000000]"/> </span>
+                    <span className="text-[#000000]">   Continue with github</span>
+
+        
         </button>
       </div>
     );

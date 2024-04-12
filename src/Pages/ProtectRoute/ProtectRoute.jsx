@@ -6,7 +6,7 @@ const ProtectRoute = ({children}) => {
     const sharePath=location.pathname;
     const {user,loading}=useAuth()
 if(loading){
-    return <span className="loading loading-spinner loading-lg"></span>
+    return <span className="loading loading-spinner text-center mt-10 loading-lg"></span>
 
 }
     if(!user){

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../useAuth/useAuth";
 import {useForm} from "react-hook-form"
 import { FaEye } from "react-icons/fa";
@@ -13,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Registration = () => {
   const [show,setShow]=useState(false)
   const{createUser ,updateUserProfile }=useAuth();
+  const navigate=useNavigate()
   const validationStyle={
   color:'red',
   fontSize:'16px',
@@ -30,6 +31,7 @@ const Registration = () => {
         if(result.user){
           updateUserProfile(name,image)
           .then(()=>{
+
             const notify = () => toast( `User account created done !You are in login ` ,{
               position: "top-right",
               autoClose: 5000,
@@ -46,7 +48,10 @@ const Registration = () => {
              });
              reset()
              notify() 
-             return result.user
+             
+             setTimeout(() => {
+              return navigate('/home')
+             }, 3000);
           })
          
         }
@@ -141,7 +146,8 @@ const Registration = () => {
             <span className="label-text">Password</span>
           </label>
         
-         <input type={show?"text":"password" } id="password" name="password" placeholder="password" className="input input-bordered" required autoComplete="off"
+          <div className="flex items-center relative">
+          <input type={show?"text":"password" } id="password" name="password " placeholder="password" className="input input-bordered w-full" required autoComplete="off"
            {...register("password", {
             required: "You must specify a password",
             pattern: {
@@ -161,14 +167,13 @@ const Registration = () => {
            error={Boolean(errors.password)}/>
 
 
-<span className='absolute  md:mt-12 lg:right-[400px]' onClick={()=>(setShow(!show))}>{show?<FaEye />:<FaEyeSlash/>}</span> <br />
+<span className='absolute right-0 mr-3' onClick={()=>(setShow(!show))}>{show?<FaEye />:<FaEyeSlash/>}</span> <br />
+          </div>
           {
             errors.password && <p style={validationStyle} >{errors.password.message}</p>
           }
 
-          <label className="label">
-            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-          </label>
+         
         </div>
 
         <div className="form-control    ">
