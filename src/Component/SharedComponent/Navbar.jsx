@@ -3,6 +3,8 @@ import './navbar.css'
 import useAuth from "../../Pages/useAuth/useAuth";
 import { useEffect, useState } from "react";
 
+
+
 const Navbar = () => {
 const [hidden,setHidden]=useState(false)
 const {user ,logOutUser,  }=useAuth();
@@ -28,7 +30,7 @@ setTimeout(() => {
     return (
         <div>
 
-<div className="navbar bg-gray-400  ">
+<div className="navbar bg-[#F5F5DC]  ">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" onClick={dropdownControl} className="btn btn-ghost z-30 lg:hidden">
@@ -45,7 +47,7 @@ setTimeout(() => {
     </div>
     <div className="flex items-center justify-start relative">
     
-    <a className="   text-2xl font-semibold  "> Helper </a>
+    <a className="  text-[#03099E] text-2xl font-semibold  "> Helper </a>
 
     </div>
   </div>
@@ -64,14 +66,21 @@ setTimeout(() => {
 </div>
 
  
+
       {
-        user? <><button onClick={logOutUser} className="py-2 bg-slate-200 px-2 rounded-md text-sm hover:bg-black hover:text-white">  <Link to="/login">Logout</Link></button> </>:
-        <button className="py-2 bg-slate-200 px-2 rounded-md text-sm hover:bg-black hover:text-white">  <Link to='/login'>Login</Link> </button>
+        user? <><a href="#_" onClick={logOutUser}  className="rounded px-2 py-[6px] overflow-hidden group bg-[#03099E] relative hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-blue -400 transition-all ease-out duration-300">
+        <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+        <span className="relative"><Link to='/logout'>Logout</Link  ></span>
+        </a> </>:
+       <a href="#_" className="relative rounded px-2 py-[6px] overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+       <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+       <span className="relative"><Link to='/login'>Login</Link  ></span>
+       </a>
+
       }
      
   </div>
 </div>
-
 
 
 
