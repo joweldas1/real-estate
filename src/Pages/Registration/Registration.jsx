@@ -83,7 +83,7 @@ const Registration = () => {
     return (
         <div>
             <div>
-            <div className="md:w-1/2 lgz;w-2/4 mx-auto" >
+            <div className="md:w-1/2 mb-8 lgz;w-2/4 mx-auto" >
                 <div>
                     <h3 className="text-2xl font-semibold text-center mt-5">Please Registration</h3>
                 </div>
@@ -177,7 +177,7 @@ const Registration = () => {
         </div>
 
         <div className="form-control    ">
-          <button className="btn  btn-primary">Sign in</button>
+          <button className="btn bg-[#45B39D]  btn-primary">Sign in</button>
         </div>
       </form>
 

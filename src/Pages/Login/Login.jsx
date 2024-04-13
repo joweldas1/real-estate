@@ -14,6 +14,10 @@ const Login = () => {
     const [error,setError]=useState('')
       const location=useLocation()
     const navigate=useNavigate()
+    const customShadow={
+      shadow:'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px'
+  }
+
 
 
     const handleToLogin=(e)=>{
@@ -63,7 +67,7 @@ const Login = () => {
 
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <button className="btn bg-[#45B39D] btn-primary">Login</button>
         </div>
       </form>
 

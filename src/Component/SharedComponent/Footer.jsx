@@ -21,17 +21,21 @@ const Footer = () => {
 
   return (
     <div>
-      <footer className="footer footer-center p-10 bg-[#F8F9FA] text-[#333333]">
-        <aside>
-          <img src="../../../public/helper.png " className="w-40" alt="" />
+      <footer className="footer footer-center p-5 bg-[#45B39D] text-[#FAF9F6]">
+        <div className='flex flex-col md:flex-row-reverse  justify-around w-full'>
+          <div>
+          <aside>
           <p className="font-bold text-2xl">Helper builders Ltd.</p>
-          <p className="font-semibold text-lg">
+          <p className="font-normal text-sm">
             Customer Priority Fast <br />
             Quality Service Must
           </p>
-          <p>Copyright © 2024 - All right reserved</p>
+          <p className='text-sm'>Copyright © 2024 - All right reserved</p>
         </aside>
-        <nav>
+          </div>
+          <div>
+          <nav>
+            <p className='hidden md:block my-3 text-lg'>Contact 24/7 </p>
           <div className="grid grid-flow-col gap-4">
             <div>
               <button>
@@ -91,6 +95,9 @@ const Footer = () => {
             </div>
           </div>
         </nav>
+          </div>
+        </div>
+     
       </footer>
     </div>
   );

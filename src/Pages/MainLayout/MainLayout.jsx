@@ -5,7 +5,10 @@ const MainLayout = () => {
     return (
         <div className='max-w-7xl m-auto font-poppins ' >
            <Navbar/>
+           
            <Outlet/>
+           <Footer/>
+
         </div>
     );
 };
