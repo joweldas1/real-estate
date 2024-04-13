@@ -1,16 +1,24 @@
 import { Link, NavLink } from "react-router-dom";
 import './navbar.css'
 import useAuth from "../../Pages/useAuth/useAuth";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
-    const {user ,logOutUser,  }=useAuth();
-    console.log(user);
+const [hidden,setHidden]=useState(false)
+const {user ,logOutUser,  }=useAuth();
 
-    const navItem= 
+const dropdownControl=()=>{
+setHidden(true)
+setTimeout(() => {
+  return setHidden(false)
+}, 2000);
+}
+
+   const navItem= 
     <>
     <li> <NavLink to="/" > Home </NavLink> </li>
     <li> <NavLink to="/blog" > Blog </NavLink> </li>
-    <li> <NavLink to="/AboutUs" > About Us </NavLink> </li>
+    <li> <NavLink to="/aboutUs"  > About Us </NavLink> </li>
     {
       user?  <li> <NavLink to="/profile" > Profile </NavLink> </li>:" "
 
@@ -23,13 +31,17 @@ const Navbar = () => {
 <div className="navbar bg-gray-400  ">
   <div className="navbar-start">
     <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost z-30 lg:hidden">
+      <div tabIndex={0} role="button" onClick={dropdownControl} className="btn btn-ghost z-30 lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </div>
+      {     hidden ?
+
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[5] p-2 shadow bg-base-100 rounded-box w-52 ">
       
-      {navItem}
-      </ul>
+     {navItem}
+    
+     
+      </ul>   : '' }
     </div>
     <div className="flex items-center justify-start relative">
     

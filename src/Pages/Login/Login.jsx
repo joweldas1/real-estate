@@ -11,6 +11,7 @@ import { useState } from "react";
 const Login = () => {
     const{logUser,setLoading }=useAuth()
     const[passShow,setPassShow]=useState( false )  ;
+    const [error,setError]=useState('')
       const location=useLocation()
     const navigate=useNavigate()
 
@@ -26,10 +27,10 @@ const Login = () => {
             setLoading(true)
             navigate(location?.state||'/')
           }
-            console.log(result.user);
           
         }).catch((err) => {
             console.log(err.message);
+            setError('Invalid email and password')
         });
     }
    
@@ -54,7 +55,9 @@ const Login = () => {
           <input type={!passShow?'password':'text'} placeholder="password" name="password" className="input input-bordered w-full" required autoComplete="off"/>
           <span className="absolute right-0 mr-4" onClick={()=>setPassShow(!passShow)} >{passShow? <FaEye/>:<FaEyeSlash/> }</span>
           </div>
-
+        {
+          error? <><p className="text-red-700 font-semibold text-sm">{error}</p></>:''
+        }
 
 
 

@@ -1,8 +1,10 @@
 
+import 'animate.css';
 import { FaFacebook } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaDiscord } from "react-icons/fa6";
 import { FaTelegram } from "react-icons/fa";
+import contactImg from "../../../public/contact.png";
 
 
 
@@ -25,7 +27,7 @@ const Contact = () => {
 <section className="p-4 lg:p-8  ">
 	<div className="container mx-auto space-y-12">
 		<div className="flex flex-col overflow-hidden rounded-md  lg:flex-row">
-			<img src="../../../public/contact.png" alt="" className=" dark:bg-gray-500 aspect-video" />
+			<img src={contactImg} alt="" className=" dark:bg-gray-500 aspect-video" />
 			<div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
 				<span className="text-xs uppercase dark:text-gray-600">Feel free to</span>
 				<h3 className="text-4xl font-bold">Contact with us any time</h3>
@@ -35,10 +37,11 @@ const Contact = () => {
 
                 <div className='flex justify-around'>
                 <div>
-                    <div className='hover:"facebook"'> <button>  <a href="https://www.facebook.com/groups/webdevelopmentbatch9?sorting_setting=CHRONOLOGICAL"><FaFacebook  style={iconStyle} className='text-blue-800 bg-[#FCFBF4]' /></a> </button></div>
+                    <div className=''>   <a className=" " href="https://www.facebook.com/groups/webdevelopmentbatch9?sorting_setting=CHRONOLOGICAL">
+                    <button className='animate__shakeY'><FaFacebook   style={iconStyle} className='text-blue-800 bg-[#FCFBF4]' /></button></a> </div>
                 </div>
                 <div>
-                    <div className=''> <button>  <a href="https://www.facebook.com/groups/webdevelopmentbatch9?sorting_setting=CHRONOLOGICAL"><FaWhatsapp style={iconStyle} className='text-[#FCFBF4] bg-green-500' /></a> </button></div>
+                    <div className="animate__pulse hover:animate__pulse hover:bg-red-600"> <button>  <a href="https://www.facebook.com/groups/webdevelopmentbatch9?sorting_setting=CHRONOLOGICAL"><FaWhatsapp style={iconStyle} className='text-[#FCFBF4] bg-green-500' /></a> </button></div>
                 </div>
                 <div>
                     <div className=''> <button>  <a href="https://www.facebook.com/groups/webdevelopmentbatch9?sorting_setting=CHRONOLOGICAL"><FaDiscord style={iconStyle} className='text-[#FCFBF4] bg-blue-500' /></a> </button></div>

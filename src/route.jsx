@@ -10,6 +10,7 @@ import Registration from "./Pages/Registration/Registration";
 import ProtectRoute from "./Pages/ProtectRoute/ProtectRoute";
 import Update from "./Component/SharedComponent/Update";
 
+
 const router = createBrowserRouter([
     {
         path:'/',
@@ -46,7 +47,8 @@ const router = createBrowserRouter([
             {
                 path:'/update',
                 element:<Update/>
-            }
+            },
+           
         ]
     }
 ])

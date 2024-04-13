@@ -9,7 +9,7 @@ const HomeDetail = () => {
     
 
     return (
-        <div className='grid  m-auto md:grid-cols-5'>
+        <div className=' m-auto '>
             <div className='col-span-4  '>
                 <img src={home.image} className='w-full' alt="" />
                 <h1 className="text-5xl font-semibold my-3 mx-2">{home.estate_title }</h1>
@@ -28,11 +28,12 @@ const HomeDetail = () => {
                 { home.facilities.map((f ,idx)=>       <h2 key={idx} className='text-base'> <span className='font-bold'>- </span> {f}</h2>  )}
                 <h2 className='text-lg'> <span className='font-bold'>Rent Price :</span> {home.price}</h2>
                 </div>
+                
                 </div>
 
   
             </div>
-            <div className='bg-green-300'></div>
+          
         </div>
     );
 };

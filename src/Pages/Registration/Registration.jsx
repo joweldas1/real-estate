@@ -50,7 +50,7 @@ const Registration = () => {
              notify() 
              
              setTimeout(() => {
-              return navigate('/home')
+              return navigate('/')
              }, 3000);
           })
          
