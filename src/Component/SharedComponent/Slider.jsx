@@ -36,14 +36,24 @@ const HeroSlider = () => {
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={50}
           slidesPerView={1}
-          navigation
+          navigation={{
+            nextEl:null,
+            prevEl:null,
+          }}
+          autoplay={{ delay: 2000 }}
+
           loop={true}
-          pagination={{ clickable: true }}
+          effect="cube"
+          pagination={{
+            clickable: true,
+            renderBullet: function (index, className) {
+              return '<span class="' + className + '" style="background-color: blue;"></span>';
+            }
+          }}
           scrollbar={{ draggable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => ('')}
           speed={1000}
-          autoplay={{ delay: 2000 }}
 
         >
          {
