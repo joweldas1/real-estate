@@ -3,15 +3,13 @@ const HomeDetail = () => {
     const {id}=useParams()
     const homeId=parseInt(id)
     const houses=useLoaderData()
-    console.log(typeof houses);   
-     const home=houses[homeId];
-     console.log(home);
-    
+     const home=houses[homeId-1];
+
 
     return (
         <div className=' m-auto '>
             <div className='col-span-4  '>
-                <img src={home.image} className='w-full' alt="" />
+                <img src={home.image} className='w-full h-auto md:h-screen' alt="" />
                 <h1 className="text-5xl font-semibold my-3 mx-2">{home.estate_title }</h1>
                 <p className='text-xl font-normal mx-2 '>{home.description}</p>
                 <div className="card card-compact w-96 bg-base-100 shadow-xl mt-5">

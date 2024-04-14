@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import './navbar.css'
 import useAuth from "../../Pages/useAuth/useAuth";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 
 
@@ -9,7 +9,7 @@ const Navbar = () => {
 const [hidden,setHidden]=useState(false)
 const {user ,logOutUser,  }=useAuth();
 const customShadow={
-  shadow:'rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;'
+  shadow:'rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px'
 }
 
 const dropdownControl=()=>{
@@ -41,7 +41,7 @@ setTimeout(() => {
       </div>
       {     hidden ?
 
-      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[5] p-2 shadow bg-base-100 rounded-box w-52 ">
+      <ul tabIndex={0} className="menu menu-sm dropdown-content text-black mt-3 z-[5] p-2 shadow bg-base-100 rounded-box w-52 ">
       
      {navItem}
     
@@ -71,14 +71,14 @@ setTimeout(() => {
  
 
       {
-        user? <><a href="#_" onClick={logOutUser} style={customShadow}  className="rounded-lg px-2 py-[6px] overflow-hidden group bg-[#03099E] relative hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-blue -400 transition-all ease-out duration-300">
+        user? <><div href="#_" onClick={logOutUser} style={customShadow}  className="rounded-lg px-2 py-[6px] overflow-hidden group bg-[#03099E] relative hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-blue -400 transition-all ease-out duration-300">
         <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
         <span className="relative"><Link to='/login'>Logout</Link  ></span>
-        </a> </>:
-       <a href="#_" style={customShadow} className="relative rounded px-2 py-[6px] overflow-hidden group bg-[#03099E] relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+        </div> </>:
+       <div href="#_" style={customShadow} className="relative rounded px-2 py-[6px] overflow-hidden group bg-[#03099E] relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
        <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
        <span className="relative"><Link to='/login'>Login</Link  ></span>
-       </a>
+       </div>
 
       }
      

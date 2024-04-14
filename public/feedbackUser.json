@@ -1,0 +1,24 @@
+{
+    "feedback": [
+      {
+        "user_name": "Emily Smith",
+        "user_image": "https://i.ibb.co/r7WLsJF/emily-smith.jpg",
+        "user_occupation": "Real Estate Investor",
+        "comment": "I found Helper to be an incredibly useful tool for finding properties in my desired location. The interface is user-friendly and the search filters are comprehensive. Highly recommended!"
+      },
+      {
+        "user_name": "David Johnson",
+        "user_image": "https://i.ibb.co/7X6rLrC/david-johnson.jpg",
+        "user_occupation": "Homebuyer",
+        "comment": "As a first-time homebuyer, I was overwhelmed with the process of finding the perfect home. Helper made it easy for me to narrow down my options and connect with reputable realtors. Thanks for making the journey less stressful!"
+      },
+      {
+        "user_name": "Sophia Martinez",
+        "user_image": "https://i.ibb.co/pXdncDz/sophia-martinez.jpg",
+        "user_occupation": "Real Estate Agent",
+        "comment": "I've been using Helper to showcase properties to my clients, and the response has been fantastic. The platform is intuitive, and the ability to create customized listings is a game-changer. Kudos to the Helper team for creating such a valuable resource!"
+      }
+      
+    ]
+  }
+  

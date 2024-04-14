@@ -18,7 +18,12 @@ useEffect(() => {
 
  
     return (
+      <>
+       <h1 className='text-center mt-16 text-4xl md:text-5xl font-medium mb-4'>Available Flats & Cottages</h1>
         <div className="grid lg:grid-cols-3 gap-5 mt-10">
+
+
+          
             {
                 homes.map((home)=>( 
                     <RentableHomeShow key={home.id} home={home} />
@@ -30,6 +35,7 @@ useEffect(() => {
             }
 
         </div>
+        </>
     );
 };
 

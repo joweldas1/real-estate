@@ -57,7 +57,6 @@ const AuthProvider = ({children}) => {
     }
 
 
-console.log(user);
 
     const authShare={createUser , logUser ,user ,logOutUser ,googleLogin , gitLogin ,loading,setLoading ,updateUserProfile ,resetPassword,userUpdate} 
     return (

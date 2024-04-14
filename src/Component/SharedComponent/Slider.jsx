@@ -1,4 +1,4 @@
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Autoplay,Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -36,15 +36,14 @@ const HeroSlider = () => {
 
     return (
         <Swiper
-          // install Swiper modules
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          modules={[Autoplay,Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={50}
           slidesPerView={1}
           navigation={{
             nextEl:null,
             prevEl:null,
           }}
-          autoplay={{ delay: 2000 }}
+          autoplay={{ delay: 3000 , pauseOnMouseEnter:true }}
 
           loop={true}
           effect="cube"
@@ -55,7 +54,7 @@ const HeroSlider = () => {
             }
           }}
           scrollbar={{ draggable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
+          onSwiper={(swiper) => ('')}
           onSlideChange={() => ('')}
           speed={1000}
 
