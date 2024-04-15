@@ -4,7 +4,7 @@ Helper is a website where user can get rentable home deatails in your nearsest ,
 
 ## Live Link- https://helper-a9.web.app/
 
-## Installation
+### Installation
 
 To built this website mainly we used React which is popular framework of JavaScript and use some react library . All uses show in below
 
