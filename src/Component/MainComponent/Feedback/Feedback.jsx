@@ -2,7 +2,7 @@
     import "slick-carousel/slick/slick.css";
     import { Swiper, SwiperSlide } from 'swiper/react';
     import 'swiper/css';
-import {Autoplay, A11y, Navigation, Pagination} from 'swiper/modules';
+import {Autoplay, A11y, Navigation,} from 'swiper/modules';
 
 
 
@@ -62,8 +62,8 @@ import {Autoplay, A11y, Navigation, Pagination} from 'swiper/modules';
                             alt=""
                         />
                         </div>
-                        <p>{feed.user_name}</p>
-                        <p>{feed.user_occupation}</p>
+                        <p className='font-semibold'>{feed.user_name}</p>
+                        <p className='font-normal'> Profession : {feed.user_occupation}</p>
                     </div>
                     </div>
                 </div>
