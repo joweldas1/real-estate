@@ -20,7 +20,7 @@ import {Autoplay, A11y, Navigation, Pagination} from 'swiper/modules';
         return (
             <>
               <div>
-            <h1 className='text-center mt-10 text-5xl font-medium mb-4'>Our Customers Feedback</h1>
+            <h1 className='text-center mt-10 text-4xl md:text-5xl font-medium mb-4'>Our Customers Feedback</h1>
         </div>
             <Swiper
             modules={[Autoplay,Navigation, A11y]}
